@@ -29,3 +29,50 @@ for( let i=0; numArray.length < 5; i++){
     console.log ( numArray )
    
 }
+
+for( let i = 0; i < numArray.length; i++){
+    //stampo dentro la lista del body tanti <li> quanti sono gli elementi dell' array
+    numberList.innerHTML = `<li>${ numArray }</li>`
+}
+
+//funzione che faccia scoparire i numeri
+let counter = 3 
+
+const countdown = document.getElementById('countdown')
+
+const timer = setInterval ( function() {
+    countdown.innerHTML = counter--
+
+    if( counter < 0){
+        clearInterval( timer )
+        numberlist.classList.add('d-none')
+        instructions.classList.add('d-none')
+        answerForm.classlist.remove('d-none')
+    }
+}, 1000)
+
+
+const btn = document.querySelector( '.btn-primary')
+const inputs = document.querySelectorAll( '.form-control')
+const numeriUtenteCorretti = []
+const message = document.getElementById( 'message')
+
+console.log(inputs)
+
+btn.addEventListener('click', function(event){
+    event.preventDefault()
+
+
+    for( let i = 0; i < inputs.length; i++ ){
+       
+    
+
+    //confronto array
+    if( numArray.includes( parseInt( inputs[i].value ))){
+        numeriUtenteCorretti.push( inputs[i].value )
+    }
+    console.log( numeriUtenteCorretti, inputs[i].value, numArray.includes( parseInt(inputs[i].value)))
+    }
+    message.innerHTML = `Hai indovinato: ${ numeriUtenteCorretti.length }`
+    console.log( arrayNumeriUtente )
+})
