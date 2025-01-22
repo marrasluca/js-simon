@@ -6,7 +6,26 @@
 
 
 const numberlist = document.getElementById('number-list')
+const numArray = []
+
 //function
 function numRandom(min,max){
-    Math.floor(Math.random() * max) + min 
+     return Math.floor(Math.random() * max) + min 
+}
+
+
+//Il ciclo for viene eseguito 5 volte
+for( let i=0; numArray.length < 5; i++){
+
+    let numRandomico = numRandom( 1, 50 )
+
+    console.log (` il tuo numero random è:${numRandomico}`)
+
+    if( numArray.includes( numRandom)){ //controllo numero se esiste già
+
+        numArray.push ( numRandom( 1, 50)) //inserisco il numero
+    }
+    
+    console.log ( numArray )
+   
 }
